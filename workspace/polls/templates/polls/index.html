@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>자기소개서</title>
+    {% load staticfiles %}
+    <!-- Bootstrap Core CSS-->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/grayscale.css"  %}" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <!-- jQuery -->
+    <script src="{% static "js/jquery.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static "js/jquery.easing.min.js" %}"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "js/grayscale.js" %}"></script>
+    <script src="{% static "js/carousel.js" %}"></script>
+
+    
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  Self Introduction
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#intro">자기소개서</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#career">경력</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#character">성격 및 목표</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">문의하기</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <section id="intro" class="container content-section text-center">
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                         {% if messages %}
+                        <ul class="messages">
+                        {% for message in messages %}
+                        <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h1>
+                        {% endfor %}
+                        </ul>
+                        {% endif %}
+                      <h1>자기소개서</h1><br/><br/>
+                        <img src="{% static "my_app/my_image.jpg" %}" width="190" height="260" align="left" alt="My image" style="margin-right:50px"/>
+                      <p class="lead"  align="left">
+                            이름 : 박태준(朴 台 濬)</br></br>
+                            생년월일 : 92년 10월 28일생 (만 23세)</br></br>
+                            주소 : 경기도 성남시 분당구 장안로51번길11, 106동</br></br>
+                            연락처 : 010.9995.2567</br></br>
+                            e-mail : tjpark1028@gmail.com</br></br>
+                      </p>
+                        <a href="#career" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    </section>
+
+    <!-- About Section -->
+    <section id="career" class="container content-section text-center">
+        <div class="row">
+                <h1>포트폴리오</h1>
+                <h3>마우스를 올리면 슬라이드가 멈춥니다.</h3>
+                <div class="row">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                      </ol>
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <img src="{% static "my_app/product_introduction.png" %}" alt="...">
+                          <div class="carousel-caption">
+                          </div>
+                        </div>
+                        <div class="item">
+                          <img src="{% static "my_app/ikemen_project.png" %}" alt="...">
+                          <div class="carousel-caption">
+                          </div>
+                        </div>
+                         <div class="item">
+                          <img src="{% static "my_app/chacare_android_project.png" %}" alt="...">
+                          <div class="carousel-caption">
+                          </div>
+                        </div>
+                         <div class="item">
+                          <img src="{% static "my_app/chacare_node_project.png" %}" alt="...">
+                          <div class="carousel-caption">
+                          </div>
+                        </div>
+                         <div class="item">
+                          <img src="{% static "my_app/rails_project.png" %}" alt="...">
+                          <div class="carousel-caption">
+                          </div>
+                             Github : https://github.com/TaeJoonPark/ruby_on_rails.git
+                        </div>      
+                    </div>
+                  
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+             <a href="#character" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+             </a>
+    </section>
+
+    <!-- Download Section -->
+    <section id="character" class="content-section text-center" >
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1>경력 및 목표</h1>
+                    </br>
+                    <p class="lead" align="left">
+                    미래능력교육개발원 : 15.03 ~ 15.12 (8개월)</br></br>
+                    (주)차케어 : 16.02 ~ 16.04 (인턴)</br>
+                    업무  내용 : node js 기반 서버 api 제작, android client 개발, mysql DB 유지보수</br></br>
+                    목표 : 모든 언어를 다룰 줄 아는 Full-Stack 개발자가 되어 번뜩이는 아이디어를 바로바로 구현할 수 있는 경지
+                    </p>
+                </div>
+            </div>
+                <a href="#contact" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+        </div>
+  </div>
+</div>
+    </section>
+
+    
+    
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1>문의하기</h2></br>
+                <p>궁금하신 사항이나 면접을 통해 더 알아보고 싶으시다면 연락을 남겨 주시기 바랍니다.</p>
+                </p>
+                <form class="form-horizontal" action="" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">성함</label>
+                        <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">연락처</label>
+                        <div class="col-sm-10">
+                        <input type="text" name="email" class="form-control" id="email" placeholder="Phone number or e-mail address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">문의사항</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="content" id ="content" rows="3">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default">전송</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Self Introduction. 성남시 분당구 장안로51번길 11 . 만든이 : 박태준</p>
+        </div>
+    </footer>
+</body>
+</html>
